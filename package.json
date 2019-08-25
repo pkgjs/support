@@ -14,6 +14,20 @@
     "type": "git",
     "url": "https://github.com/pkgjs/support.git"
   },
+  "support": {
+    "versions": [{
+      "version": "*",
+      "target": {
+        "node": "lts"
+      },
+      "response": {
+        "type": "best-effort"
+      },
+      "backing": {
+        "hobby": "https://github.com/pkgjs/support"
+      }
+    }]
+  },
   "scripts": {
     "test": "standard && mocha --delay",
     "prepublushOnly": "npm t",

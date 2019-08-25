@@ -1,6 +1,6 @@
 {
   "name": "@pkgjs/support",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Package support information (see: https://github.com/nodejs/package-maintenance/pull/220)",
   "author": "Wes Todd <wes@wesleytodd.com>",
   "keywords": [
@@ -15,18 +15,20 @@
     "url": "https://github.com/pkgjs/support.git"
   },
   "support": {
-    "versions": [{
-      "version": "*",
-      "target": {
-        "node": "lts"
-      },
-      "response": {
-        "type": "best-effort"
-      },
-      "backing": {
-        "hobby": "https://github.com/pkgjs/support"
+    "versions": [
+      {
+        "version": "*",
+        "target": {
+          "node": "lts"
+        },
+        "response": {
+          "type": "best-effort"
+        },
+        "backing": {
+          "hobby": "https://github.com/pkgjs/support"
+        }
       }
-    }]
+    ]
   },
   "scripts": {
     "test": "standard && mocha --delay",

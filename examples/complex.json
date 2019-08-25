@@ -1,0 +1,60 @@
+{
+  "versions": [{
+    "version": "<1",
+    "target": {
+      "node": "none"
+    },
+    "response": {
+      "type": "none"
+    }
+  }, {
+    "version": "^1.0.0",
+    "target": {
+      "node": ">=8 <10"
+    },
+    "response": [{
+      "type": "best-effort",
+      "paid": false,
+      "contact": {
+        "name": "Volunteers",
+        "url": "https://github.com/pkgjs/support"
+      }
+    }, {
+      "type": "regular-2",
+      "paid": true,
+      "contact": [{
+        "name": "Premium Support",
+        "email": "wes@wesleytodd.com"
+      }, {
+        "name": "Premium Support",
+        "url": "https://github.com/pkgjs/support"
+      }]
+    }]
+  }, {
+    "version": ">2.0.0",
+    "target": {
+      "node": "lts"
+    },
+    "response": [{
+      "type": "best-effort",
+      "paid": false,
+      "contact": {
+        "name": "Volunteers",
+        "url": "https://github.com/pkgjs/support"
+      }
+    }, {
+      "type": "regular-1",
+      "paid": true,
+      "contact": [{
+        "name": "Premium Support",
+        "email": "wes@wesleytodd.com"
+      }, {
+        "name": "Premium Support",
+        "url": "https://github.com/pkgjs/support"
+      }]
+    }],
+    "backing": {
+      "hobby": "https://github.com/pkgjs/support"
+    }
+  }]
+}

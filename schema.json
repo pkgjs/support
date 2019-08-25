@@ -1,0 +1,161 @@
+{
+  "$id": "https://www.github.com/pkgjs/support/schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Package Support Information",
+
+  "type": "object",
+  "required": ["versions"],
+  "properties": {
+    "versions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#SupportVersion"
+      }
+    }
+  },
+
+  "definitions": {
+    "SupportVersion": {
+      "$id": "#SupportVersion",
+      "type": "object",
+      "required": ["version"],
+      "properties": {
+        "version": { "$ref": "#SemVerRange" },
+        "expires": { "type": "string" },
+        "target": { "$ref": "#SupportTarget" },
+        "response": {
+          "oneOf": [{
+              "$ref": "#SupportResponse"
+            }, {
+            "type": "array",
+            "minItems": 1,
+            "items": { "$ref": "#SupportResponse" }
+          }]
+        },
+        "backing": { "$ref": "#SupportBacking" }
+      }
+    },
+
+    "SemVerRange": {
+      "$id": "#SemVerRange",
+      "type": "string"
+    },
+
+    "SupportTarget": {
+      "$id": "#SupportTarget",
+      "type": "object",
+      "properties": {
+        "node": {
+          "oneOf": [
+            { "$ref": "#SupportTargetNodeVersion" },
+            {
+              "type": "array",
+              "minItems": 1,
+              "items": { "$ref": "#SupportTargetNodeVersion" }
+            }
+          ]
+        },
+        "additionalProperties": {
+          "oneOf": [
+            { "type": "string" },
+            {
+              "type": "array",
+              "minItems": 1,
+              "items": { "type": "string" }
+            }
+          ]
+        }
+      }
+    },
+
+    "SupportTargetNodeVersion": {
+      "$id": "#SupportTargetNodeVersion",
+      "type": "string",
+      "anyOf": [{
+        "type": "string",
+        "enum": [
+          "abandoned",
+          "none",
+          "all",
+          "lts",
+          "active",
+          "lts_active",
+          "lts_latest",
+          "maintained",
+          "current"
+        ]
+      }, {
+        "$ref": "#SemVerRange"
+      }]
+    },
+
+    "SupportResponse": {
+      "$id": "#SupportResponse",
+      "type": "object",
+      "properties": {
+        "type": {
+          "oneOf": [{
+            "type": "string",
+            "enum": [ "none", "best-effort", "24-7" ]
+          }, {
+            "type": "string",
+            "pattern": "regular-[1-7]"
+          }]
+        },
+        "paid": {
+          "type": "boolean"
+        },
+        "contact": {
+          "oneOf": [{
+            "$ref": "#SupportResponseContact"
+          }, {
+            "type": "array",
+            "minItems": 1,
+            "items": { "$ref": "#SupportResponseContact"}
+          }]
+        }
+      }
+    },
+
+    "SupportResponseContact": {
+      "$id": "#SupportResponseContact",
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "url": { "type": "string" }
+      }
+    },
+
+    "SupportBacking": {
+      "$id": "#SupportBacking",
+      "type": "object",
+      "properties": {
+        "none": { "$ref": "#SupportBackingValue" },
+        "hobby": { "$ref": "#SupportBackingValue" },
+        "sponsored": { "$ref": "#SupportBackingValue" },
+        "bounty": { "$ref": "#SupportBackingValue" },
+        "project": { "$ref": "#SupportBackingValue" },
+        "foundation": { "$ref": "#SupportBackingValue" },
+        "company": { "$ref": "#SupportBackingValue" },
+        "commercial": { "$ref": "#SupportBackingValue" },
+        "paid-support": { "$ref": "#SupportBackingValue" },
+        "freemium": { "$ref": "#SupportBackingValue" },
+        "donations": { "$ref": "#SupportBackingValue" }
+      }
+    },
+
+    "SupportBackingValue": {
+      "$id": "#SupportBackingValue",
+      "oneOf": [{
+        "type": "string"
+      }, {
+        "type": "array",
+        "minItems": 1,
+        "items": { "type": "string" }
+      }]
+    }
+  }
+}

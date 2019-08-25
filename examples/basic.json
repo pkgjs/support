@@ -1,0 +1,14 @@
+{
+  "versions": [{
+    "version": "*",
+    "target": {
+      "node": "lts"
+    },
+    "response": {
+      "type": "best-effort"
+    },
+    "backing": {
+      "hobby": "https://github.com/pkgjs/support"
+    }
+  }]
+}

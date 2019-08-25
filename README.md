@@ -3,6 +3,7 @@
 [![NPM Version](https://img.shields.io/npm/v/@pkgjs/support.svg)](https://npmjs.org/package/@pkgjs/support)
 [![NPM Downloads](https://img.shields.io/npm/dm/@pkgjs/support.svg)](https://npmjs.org/package/@pkgjs/support)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](https://github.com/standard/standard)
+[![CI Test](https://github.com/pkgjs/support/workflows/Test/badge.svg)](https://github.com/pkgjs/support/actions)
 
 ![support backing](https://img.shields.io/badge/support%20backing-HOBBY-blue.svg)
 ![support target](https://img.shields.io/badge/support%20target-LTS-red.svg)

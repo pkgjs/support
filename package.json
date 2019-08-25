@@ -19,7 +19,7 @@
       {
         "version": "*",
         "target": {
-          "node": "lts"
+          "node": "maintained"
         },
         "response": {
           "type": "best-effort"

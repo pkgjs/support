@@ -82,7 +82,7 @@
           "active",
           "lts_active",
           "lts_latest",
-          "maintained",
+          "supported",
           "current"
         ]
       }, {
@@ -97,7 +97,7 @@
         "type": {
           "oneOf": [{
             "type": "string",
-            "enum": [ "none", "best-effort", "24-7" ]
+            "enum": [ "none", "time-permitting", "best-effort", "24-7" ]
           }, {
             "type": "string",
             "pattern": "regular-[1-7]"

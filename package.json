@@ -8,7 +8,7 @@
     "pacakge maintenence",
     "sustainability"
   ],
-  "license": "ISC",
+  "license": "MIT",
   "main": "index.js",
   "repository": {
     "type": "git",

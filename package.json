@@ -9,6 +9,7 @@
     "sustainability"
   ],
   "license": "MIT",
+  "support": true,
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -17,28 +18,13 @@
   "bin": {
     "support": "./bin/support"
   },
-  "support": {
-    "versions": [
-      {
-        "version": "*",
-        "target": {
-          "node": "maintained"
-        },
-        "response": {
-          "type": "best-effort"
-        },
-        "backing": {
-          "hobby": "https://github.com/pkgjs/support"
-        }
-      }
-    ]
-  },
   "scripts": {
     "test": "standard && mocha --delay",
     "prepublishOnly": "npm test",
     "postpublish": "git push origin && git push origin --tags"
   },
   "dependencies": {
+    "@npmcli/arborist": "0.0.0-pre.19",
     "ajv": "^6.11.0",
     "contains-path": "^1.0.0",
     "loggerr": "^3.0.0-0",

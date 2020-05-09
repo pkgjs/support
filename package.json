@@ -43,7 +43,6 @@
     "contains-path": "^1.0.0",
     "loggerr": "^3.0.0-0",
     "through2-spy": "^2.0.0",
-    "yargs": "^14.0.0"
   },
   "devDependencies": {
     "fs-extra": "^8.1.0",

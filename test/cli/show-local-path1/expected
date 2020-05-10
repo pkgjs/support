@@ -1,0 +1,17 @@
+  @pkgjs/support-show-local-path1(0.0.1) - {
+  "versions": [
+    {
+      "version": "*",
+      "target": {
+        "node": "supported"
+      },
+      "response": {
+        "type": "best-effort"
+      },
+      "backing": {
+        "hobby": "https://github.com/pkgjs/support"
+      }
+    }
+  ]
+ }
+

@@ -3,6 +3,7 @@ const path = require('path')
 const fs = require('fs')
 const normalizeUrl = require('normalize-url')
 const Ajv = require('ajv')
+const got = require('got')
 
 let ajv
 let compiledSchema
@@ -59,7 +60,23 @@ module.exports.sanitizePath = (basePath, inputPath, basePathOverride) => {
   return ret
 }
 
-module.exports.getSupportData = (pkg, pkgPath, preferCanonical, basePathOverride) => {
+async function resolveSupportInfo (supportInfo, fetchCanonical) {
+  supportInfo.resolved = false
+  if (fetchCanonical) {
+    const url = normalizeUrl(supportInfo.url
+      .replace('blob', '')
+      .replace('github.com', 'raw.githubusercontent.com'))
+    try {
+      const result = await got(url)
+      supportInfo.contents = result.body
+      supportInfo.resolved = true
+    } catch (e) {
+      supportInfo.error = e
+    }
+  }
+}
+
+module.exports.getSupportData = async (pkg, pkgPath, preferCanonical, basePathOverride, fetchCanonical) => {
   const supportInfo = { contents: 'unknown', url: '', resolved: true }
   if (pkg.support) {
     if ((pkg.support === true) || (typeof pkg.support === 'string')) {
@@ -68,14 +85,15 @@ module.exports.getSupportData = (pkg, pkgPath, preferCanonical, basePathOverride
       const localPath = path.join(pkgPath, supportInfoName)
       if (!preferCanonical && fs.existsSync(localPath)) {
         supportInfo.contents = fs.readFileSync(localPath)
+        supportInfo.resolved = true
       } else {
         supportInfo.url = module.exports.getRemoteSupportInfoUrl(pkg.repository, supportInfoName)
-        supportInfo.resolved = false
+        await resolveSupportInfo(supportInfo, fetchCanonical)
       }
     } else if (typeof pkg.support === 'object') {
       const supportInfoName = pkg.support.path ? pkg.support.path : module.exports.defaultPackageSupport
       supportInfo.url = module.exports.getRemoteSupportInfoUrl(pkg.support.repository, supportInfoName)
-      supportInfo.resolved = false
+      await resolveSupportInfo(supportInfo, fetchCanonical)
     }
   }
   return supportInfo

@@ -1,0 +1,15 @@
+{
+  "name": "@pkgjs/support-separate-repo",
+  "version": "0.0.1",
+  "support": {
+    "path": "./examples/basic.json",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/pkgjs/support.git"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pkgjs/support-separate-repo.git"
+  }
+}

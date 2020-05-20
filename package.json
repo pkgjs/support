@@ -3,6 +3,7 @@
   "version": "0.0.2",
   "description": "Package support information (see: https://github.com/nodejs/package-maintenance/pull/220)",
   "author": "Wes Todd <wes@wesleytodd.com>",
+  "support": true,
   "keywords": [
     "support",
     "pacakge maintenence",

@@ -1,0 +1,29 @@
+info    › validate:  
+  - 0: {
+  keyword: [32m'enum'[39m,
+  dataPath: [32m'.support'[39m,
+  schemaPath: [32m'#/properties/support/oneOf/0/enum'[39m,
+  params: { allowedValues: [ [33mtrue[39m ] },
+  message: [32m'should be equal to one of the allowed values'[39m
+}
+  - 1: {
+  keyword: [32m'type'[39m,
+  dataPath: [32m'.support'[39m,
+  schemaPath: [32m'#/properties/support/oneOf/1/type'[39m,
+  params: { type: [32m'string'[39m },
+  message: [32m'should be string'[39m
+}
+  - 2: {
+  keyword: [32m'required'[39m,
+  dataPath: [32m'.support.repository'[39m,
+  schemaPath: [32m'#Repository/required'[39m,
+  params: { missingProperty: [32m'type'[39m },
+  message: [32m"should have required property 'type'"[39m
+}
+  - 3: {
+  keyword: [32m'oneOf'[39m,
+  dataPath: [32m'.support'[39m,
+  schemaPath: [32m'#/properties/support/oneOf'[39m,
+  params: { passingSchemas: [1mnull[22m },
+  message: [32m'should match exactly one schema in oneOf'[39m
+}

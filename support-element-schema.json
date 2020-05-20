@@ -1,0 +1,38 @@
+{
+  "$id": "https://raw.githubusercontent.com/pkgjs/support/master/support-element-schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Package Support Package.json element",
+
+  "type": "object",
+  "properties": {
+    "support": {
+      "oneOf": [{
+        "enum": [ true ]
+      }, {
+        "type": "string"
+      }, {
+        "type": "object",
+        "required": ["repository"],
+        "properties": {
+          "repository": { "$ref": "#Repository" },
+          "path": { "type": "string" }
+        },
+        "additionalProperties": false
+      }]
+    }
+  },
+
+  "definitions": {
+    "repository": {
+      "$id": "#Repository",
+      "type": "object",
+      "required": ["type", "url"],
+      "properties": {
+        "type": { "enum": [ "git" ] },
+        "url": { "type": "string" },
+        "directory": { "type": "string" }
+      },
+      "additionalProperties": false
+    }
+  }
+}

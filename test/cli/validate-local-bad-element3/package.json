@@ -1,0 +1,9 @@
+{
+  "name": "@pkgjs/support-show-local",
+  "version": "0.0.1",
+  "support": { },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pkgjs/support.git"
+  }
+}

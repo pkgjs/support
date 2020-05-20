@@ -7,10 +7,29 @@ const got = require('got')
 
 let ajv
 let compiledSchema
+let ajvElement
+let compiledSchemaElement
 
 const schema = module.exports.schema = require('./schema.json')
+const supportElementSchema = module.exports.schema = require('./support-element-schema.json')
 
 module.exports.defaultPackageSupport = 'package-support.json'
+
+module.exports.validateSupportElement = (obj) => {
+  if (!ajvElement) {
+    ajvElement = new Ajv()
+    compiledSchemaElement = ajvElement.compile(supportElementSchema)
+  }
+
+  const validates = compiledSchemaElement(obj)
+  if (!validates) {
+    const err = new Error('Validation Failed')
+    err.validationErrors = compiledSchemaElement.errors
+    err.validationSchema = compiledSchemaElement.schema
+    throw err
+  }
+  return true
+}
 
 module.exports.validate = (obj) => {
   if (!ajv) {

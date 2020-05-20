@@ -1,0 +1,18 @@
+{
+  "name": "@pkgjs/support-separate-repo-directory1",
+  "version": "0.0.1",
+  "support": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pkgjs/support-separate-repo-directory1.git"
+  },
+  "support": {
+    "repository" : {
+      "type": "git",
+      "url" : "https://github.com/pkgjs/support-separate-repo-other.git",
+      "directory" : "subdir2",
+      "extra": "123"
+    },
+   "path" : "./MySupportPackage.json"
+  }
+}

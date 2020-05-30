@@ -35,7 +35,7 @@
   },
   "scripts": {
     "test": "standard && mocha --delay",
-    "prepublushOnly": "npm t",
+    "prepublishOnly": "npm t",
     "postpublish": "git push origin && git push origin --tags"
   },
   "dependencies": {
@@ -48,5 +48,8 @@
     "fs-extra": "^8.1.0",
     "mocha": "^6.2.0",
     "standard": "^14.0.2"
+  },
+  "engines": {
+    "node": "^14 || ^13 || ^12 || ^11 || ^10 || ^8 || ^6"
   }
 }

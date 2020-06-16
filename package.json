@@ -14,6 +14,9 @@
     "type": "git",
     "url": "https://github.com/pkgjs/support.git"
   },
+  "bin": {
+    "support": "./bin/support"
+  },
   "support": {
     "versions": [
       {
@@ -32,15 +35,22 @@
   },
   "scripts": {
     "test": "standard && mocha --delay",
-    "prepublushOnly": "npm t",
+    "prepublishOnly": "npm test",
     "postpublish": "git push origin && git push origin --tags"
   },
   "dependencies": {
-    "ajv": "^6.10.2"
+    "ajv": "^6.11.0",
+    "contains-path": "^1.0.0",
+    "loggerr": "^3.0.0-0",
+    "through2-spy": "^2.0.0",
+    "yargs": "^14.0.0"
   },
   "devDependencies": {
     "fs-extra": "^8.1.0",
     "mocha": "^6.2.0",
     "standard": "^14.0.2"
+  },
+  "engines": {
+    "node": "^14 || ^13 || ^12 || ^11 || ^10 || ^8 || ^6"
   }
 }

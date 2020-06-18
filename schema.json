@@ -34,7 +34,8 @@
           }]
         },
         "backing": { "$ref": "#SupportBacking" }
-      }
+      },
+      "additionalProperties": false
     },
 
     "SemVerRange": {

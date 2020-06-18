@@ -1,0 +1,16 @@
+{
+  "versions": [
+    {
+      "version": "*",
+      "target": {
+        "node": "supported"
+      },
+      "response": {
+        "type": "Xbest-effort"
+      },
+      "backing": {
+        "hobby": "https://github.com/pkgjs/support"
+      }
+    }
+  ]
+ }

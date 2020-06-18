@@ -16,7 +16,15 @@ const supportElementSchema = module.exports.schema = require('./support-element-
 
 module.exports.defaultPackageSupport = 'package-support.json'
 
-module.exports.validateSupportElement = (obj) => {
+function getBetterAjvErrorsOptions (cli) {
+  const options = { format: 'js' }
+  if (cli === true) {
+    options.format = 'cli'
+  }
+  return options
+}
+
+module.exports.validateSupportElement = (obj, cli = false) => {
   if (!ajvElement) {
     ajvElement = new Ajv({ jsonPointers: true })
     compiledSchemaElement = ajvElement.compile(supportElementSchema)
@@ -26,14 +34,14 @@ module.exports.validateSupportElement = (obj) => {
   if (!validates) {
     const err = new Error('Validation Failed')
     err.validationErrors = compiledSchemaElement.errors
-    err.prettyValidationErrors = betterAjvErrors(supportElementSchema, obj, compiledSchemaElement.errors)
+    err.prettyValidationErrors = betterAjvErrors(supportElementSchema, obj, compiledSchemaElement.errors, getBetterAjvErrorsOptions(cli))
     err.validationSchema = compiledSchemaElement.schema
     throw err
   }
   return true
 }
 
-module.exports.validate = (obj) => {
+module.exports.validate = (obj, cli = false) => {
   if (!ajv) {
     ajv = new Ajv({ jsonPointers: true })
     compiledSchema = ajv.compile(schema)
@@ -43,7 +51,7 @@ module.exports.validate = (obj) => {
   if (!validates) {
     const err = new Error('Validation Failed')
     err.validationErrors = compiledSchema.errors
-    err.prettyValidationErrors = betterAjvErrors(schema, obj, compiledSchema.errors)
+    err.prettyValidationErrors = betterAjvErrors(schema, obj, compiledSchema.errors, getBetterAjvErrorsOptions(cli))
     err.validationSchema = compiledSchema.schema
     throw err
   }

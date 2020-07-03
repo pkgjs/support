@@ -11,6 +11,6 @@
       "type": "git",
       "directory" : "subdir2"
     },
-   "path" : "./MySupportPackage.json"
+   "path" : "./my-support-package.json"
   }
 }

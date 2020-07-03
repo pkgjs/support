@@ -1,7 +1,7 @@
 {
   "name": "@pkgjs/show-local-path2",
   "version": "0.0.1",
-  "support": "./subdir/MySupportInfo.json",
+  "support": "./subdir/my-support-info.json",
   "repository": {
     "type": "git",
     "url": "https://github.com/pkgjs/show-local-path2.git"

@@ -1,20 +1,20 @@
 Error in support element in package.json
 ENUM should be equal to one of the allowed values
 
-> 1 | {"support":{"repository":{"type":"git","url":"https://github.com/pkgjs/support-separate-repo-other.git","directory":"subdir2"},"path":"./MySupportPackage.json","extra":"123"}}
-    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 👈🏽  enum should be equal to one of the allowed values
+> 1 | {"support":{"repository":{"type":"git","url":"https://github.com/pkgjs/support-separate-repo-other.git","directory":"subdir2"},"path":"./my-support-package.json","extra":"123"}}
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 👈🏽  enum should be equal to one of the allowed values
 
 TYPE should be string
 
-> 1 | {"support":{"repository":{"type":"git","url":"https://github.com/pkgjs/support-separate-repo-other.git","directory":"subdir2"},"path":"./MySupportPackage.json","extra":"123"}}
-    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 👈🏽  type should be string
+> 1 | {"support":{"repository":{"type":"git","url":"https://github.com/pkgjs/support-separate-repo-other.git","directory":"subdir2"},"path":"./my-support-package.json","extra":"123"}}
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 👈🏽  type should be string
 
 ADDTIONAL PROPERTY should NOT have additional properties
 
-> 1 | {"support":{"repository":{"type":"git","url":"https://github.com/pkgjs/support-separate-repo-other.git","directory":"subdir2"},"path":"./MySupportPackage.json","extra":"123"}}
-    |                                                                                                                                                                 ^^^^^^^ 😲  extra is not expected to be here!
+> 1 | {"support":{"repository":{"type":"git","url":"https://github.com/pkgjs/support-separate-repo-other.git","directory":"subdir2"},"path":"./my-support-package.json","extra":"123"}}
+    |                                                                                                                                                                   ^^^^^^^ 😲  extra is not expected to be here!
 
 ONEOF should match exactly one schema in oneOf
 
-> 1 | {"support":{"repository":{"type":"git","url":"https://github.com/pkgjs/support-separate-repo-other.git","directory":"subdir2"},"path":"./MySupportPackage.json","extra":"123"}}
-    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 👈🏽  oneOf should match exactly one schema in oneOf
+> 1 | {"support":{"repository":{"type":"git","url":"https://github.com/pkgjs/support-separate-repo-other.git","directory":"subdir2"},"path":"./my-support-package.json","extra":"123"}}
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 👈🏽  oneOf should match exactly one schema in oneOf

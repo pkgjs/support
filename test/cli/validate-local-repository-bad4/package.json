@@ -13,6 +13,6 @@
       "directory" : "subdir2",
       "extra": "123"
     },
-   "path" : "./MySupportPackage.json"
+   "path" : "./my-support-package.json"
   }
 }

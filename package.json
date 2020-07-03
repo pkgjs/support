@@ -10,7 +10,6 @@
     "sustainability"
   ],
   "license": "MIT",
-  "support": true,
   "main": "index.js",
   "repository": {
     "type": "git",

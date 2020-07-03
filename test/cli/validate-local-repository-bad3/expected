@@ -1,20 +1,20 @@
 Error in support element in package.json
 ENUM should be equal to one of the allowed values
 
-> 1 | {"support":{"repository":{"url":"https://github.com/pkgjs/support-separate-repo-other.git","directory":"subdir2"},"path":"./MySupportPackage.json"}}
-    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 👈🏽  enum should be equal to one of the allowed values
+> 1 | {"support":{"repository":{"url":"https://github.com/pkgjs/support-separate-repo-other.git","directory":"subdir2"},"path":"./my-support-package.json"}}
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 👈🏽  enum should be equal to one of the allowed values
 
 TYPE should be string
 
-> 1 | {"support":{"repository":{"url":"https://github.com/pkgjs/support-separate-repo-other.git","directory":"subdir2"},"path":"./MySupportPackage.json"}}
-    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 👈🏽  type should be string
+> 1 | {"support":{"repository":{"url":"https://github.com/pkgjs/support-separate-repo-other.git","directory":"subdir2"},"path":"./my-support-package.json"}}
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 👈🏽  type should be string
 
 ONEOF should match exactly one schema in oneOf
 
-> 1 | {"support":{"repository":{"url":"https://github.com/pkgjs/support-separate-repo-other.git","directory":"subdir2"},"path":"./MySupportPackage.json"}}
-    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 👈🏽  oneOf should match exactly one schema in oneOf
+> 1 | {"support":{"repository":{"url":"https://github.com/pkgjs/support-separate-repo-other.git","directory":"subdir2"},"path":"./my-support-package.json"}}
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 👈🏽  oneOf should match exactly one schema in oneOf
 
 REQUIRED should have required property 'type'
 
-> 1 | {"support":{"repository":{"url":"https://github.com/pkgjs/support-separate-repo-other.git","directory":"subdir2"},"path":"./MySupportPackage.json"}}
+> 1 | {"support":{"repository":{"url":"https://github.com/pkgjs/support-separate-repo-other.git","directory":"subdir2"},"path":"./my-support-package.json"}}
     |                          ^ ☹️  type is missing here!

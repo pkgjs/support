@@ -12,7 +12,7 @@
       "url" : "https://github.com/pkgjs/support-separate-repo-other.git",
       "directory" : "subdir2"
     },
-   "path" : "./MySupportPackage.json",
+   "path" : "./my-support-package.json",
    "extra": "123"
   }
 }

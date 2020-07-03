@@ -11,6 +11,6 @@
       "type": "git",
       "url" : "https://github.com/pkgjs/support-separate-repo-other.git"
     },
-   "path" : "./MySupportPackage.json"
+   "path" : "./my-support-package.json"
   }
 }

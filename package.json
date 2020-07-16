@@ -24,7 +24,7 @@
     "postpublish": "git push origin && git push origin --tags"
   },
   "dependencies": {
-    "@npmcli/arborist": "0.0.0-pre.19",
+    "@npmcli/arborist": "^0.0.0",
     "ajv": "^6.11.0",
     "better-ajv-errors": "^0.6.7",
     "got": "^11.1.3",

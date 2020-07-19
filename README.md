@@ -14,6 +14,9 @@ of support they may intend to provide.  The [Node.js Package Maintenence Working
 is working to propose [a spec](https://github.com/nodejs/package-maintenance/issues/220) to help package authors declare their intended support goals.  This package provides
 some tooling around working with the format proposed.
 
+This repository is managed by the [Package Maintenance Working Group](https://github.com/nodejs/package-maintenance), see [Governance](https://github.com/nodejs/package-maintenance/blob/master/Governance.md).
+
+
 ## Project Status
 
 The spec proposal is currently being reviewed and is open for feedback.  As we have not

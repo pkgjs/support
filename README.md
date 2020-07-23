@@ -23,28 +23,34 @@ The spec proposal is currently being reviewed and is open for feedback.  As we h
 finalized the documentation, this package is similarly in draft.  Until the spec is
 considered complete I will hold off on publishing `1.0.0`.
 
-## Usage
+## Command line usage
+
+A command line tool is provided which supports the following commands:
+
+* show - show the support info for the package tree.
+* validate - validate support info for a package, to be used by a 
+  maintainer before publishing.
+
+These commands support the following options:
+
+* --canonical  - prefer canonical data over package support data
+  that may be available locally. Default is `false`.
+* --fetch - if local support data is not available or --canonical
+  is specified, fetch the support data from the remote canonical
+  location when needed. Default is `false`
+* --base-path - directory root within which the tool can read/validate
+  package support files. The default is the directory from which the
+  package.json for the top level package was read.
+
+More details and explanation of the use cases for these
+commands is provided in [command line usage](./doc/command-line-usage.md).
+
+The simplest way to run the tool is to simply run:
 
 ```
-$ npm i @pkgjs/support
+npx support show
 ```
 
-```javascript
-const support = require('@pkgjs/support')
-
-// Load in a projects package.json
-const pkgJson = require('./package.json')
-
-// The current spec says that the "support" key will
-// be an object with the support schema
-try {
-  support.validate(pkgJson.support)
-} catch (e) {
-  // Validation failure
-  // The error is annotated with the
-  // errors and schema from `ajv`
-  console.error(e)
-  console.log(e.validationErrors)
-  console.log(e.validationSchema)
-}
+```
+npx support validate
 ```

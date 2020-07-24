@@ -1,0 +1,9 @@
+{
+  "name": "@pkgjs/support-show-local-escape-ok",
+  "version": "0.0.1",
+  "support": "../../fixtures/my-support-info.json",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pkgjs/support.git"
+  }
+}

@@ -33,7 +33,7 @@ more deduplicated or focussed views of the information available.
 
 The general flow is:
 
-* install the package to display package support information
+* install the package to display package support information for
 * cd into the directory which contains the root package
 * execute `npx support show`
 

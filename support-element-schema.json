@@ -29,7 +29,7 @@
       "required": ["type", "url"],
       "properties": {
         "type": { "enum": [ "git" ] },
-        "url": { "type": "string" },
+        "url": { "type": "string", "format": "uri" },
         "directory": { "type": "string" }
       },
       "additionalProperties": false

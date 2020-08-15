@@ -11,7 +11,7 @@
 
 When an author releases an Open Source package there are many different levels
 of support they may intend to provide.  The [Node.js Package Maintenence Working Group](https://github.com/nodejs/package-maintenance)
-is working to propose [a spec](https://github.com/nodejs/package-maintenance/issues/220) to help package authors declare their intended support goals.  This package provides
+is working to propose [a spec](https://github.com/nodejs/package-maintenance/blob/HEAD/docs/PACKAGE-SUPPORT.md) to help package authors declare their intended support goals.  This package provides
 some tooling around working with the format proposed.
 
 This repository is managed by the [Package Maintenance Working Group](https://github.com/nodejs/package-maintenance), see [Governance](https://github.com/nodejs/package-maintenance/blob/master/Governance.md).
@@ -48,9 +48,9 @@ commands is provided in [command line usage](./doc/command-line-usage.md).
 The simplest way to run the tool is to simply run:
 
 ```
-npx support show
+npx @pkgjs/support show
 ```
 
 ```
-npx support validate
+npx @pkgjs/support validate
 ```

@@ -41,9 +41,9 @@ For example once node.js and the package support tool are installed to show
 the package support for a module (the support module itself in this example):
 
 ```shell
-npm install support
-cd node_modules/support
-npx support show
+npm install @pkgjs/support
+cd node_modules/@pkgjs/support
+npx @pkgjs/support show
 ```
 
 with a stripped down version of the the output to make it more easily readable being:
@@ -92,7 +92,7 @@ as when the package.json specifies that there is support info but it is not avai
 For example:
 
 ```
-npx show --canonical
+npx @pkgjs/support show --canonical
 ```
 
 
@@ -129,7 +129,7 @@ add the `--fetch` option which will pull the remote support information when nec
 The following command/options will always show the most up to date package support information
 at the cost of fetching from remote sites.
 ```
-npx show --canonical --fetch
+npx @pkgjs/support show --canonical --fetch
 ```
 
 `--fetch` can also be used without `--canonical` in which case the remote support
@@ -143,7 +143,7 @@ support info in these cases you can use the `--base-path` option to specify the 
 most root from which packge support files can be read:
 
 ```shell
-npx support  --base-path=${cwd}/../.. show
+npx @pkgjs/support --base-path=${cwd}/../.. show
 ```
 
 In the case where the required base path is not specified, and the file is outside
@@ -226,5 +226,5 @@ support info in these cases you can use the `--base-path` option to specify the 
 most root from which packge support files can be read:
 
 ```shell
-npx support  --base-path=${cwd}/../.. validate
+npx @pkgjs/support --base-path=${cwd}/../.. validate
 ```

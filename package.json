@@ -1,8 +1,8 @@
 {
   "name": "@pkgjs/support",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Package support information (see: https://github.com/nodejs/package-maintenance/pull/220)",
-  "author": "Wes Todd <wes@wesleytodd.com>",
+  "author": "pkgjs contributors - https://github.com/pkgjs/support/graphs/contributors",
   "support": true,
   "keywords": [
     "support",

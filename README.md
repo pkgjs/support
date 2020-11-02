@@ -10,7 +10,7 @@
 ![support response-def](https://img.shields.io/badge/support%20response-best--effort-yellow.svg)
 
 When an author releases an Open Source package there are many different levels
-of support they may intend to provide.  The [Node.js Package Maintenence Working Group](https://github.com/nodejs/package-maintenance)
+of support they may intend to provide.  The [Node.js Package Maintenance Working Group](https://github.com/nodejs/package-maintenance)
 is working to propose [a spec](https://github.com/nodejs/package-maintenance/blob/HEAD/docs/PACKAGE-SUPPORT.md) to help package authors declare their intended support goals.  This package provides
 some tooling around working with the format proposed.
 

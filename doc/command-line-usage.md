@@ -1,4 +1,4 @@
-# Using the packge support tool from the command line
+# Using the package support tool from the command line
 
 There are 2 main uses cases for the package support tool
 
@@ -16,7 +16,7 @@ you can run the support tool using `npx support`.
 
 ## Package Consumers
 
-The support tool helps package conumers review and understand the
+The support tool helps package consumers review and understand the
 package support information provided by maintainers. See
 [Package-support.md](https://github.com/nodejs/package-maintenance/blob/master/docs/PACKAGE-SUPPORT.md)
 which documents the suggested best practice and the specific format of the
@@ -123,7 +123,7 @@ consumer can choose to find the locations without automatically triggering a num
 remote calls.
 
 If the consumer wants to have the canonical information pulled automatically they can
-add the `--fetch` option which will pull the remote support information when necesarry.
+add the `--fetch` option which will pull the remote support information when necessary.
 
 
 The following command/options will always show the most up to date package support information
@@ -138,9 +138,9 @@ information will only be pulled when it is not provided as part of the npm packa
 Local support information may be available locally but outside of the package itself.
 This may be the case if you are using mono-repo and sharing the support file.
 In this case, by default, the support tool will not read/display files outside of the
-packge itself to avoid potential security issues. In order to allow the tool to display
+package itself to avoid potential security issues. In order to allow the tool to display
 support info in these cases you can use the `--base-path` option to specify the top
-most root from which packge support files can be read:
+most root from which package support files can be read:
 
 ```shell
 npx @pkgjs/support --base-path=${cwd}/../.. show
@@ -181,12 +181,12 @@ and the file containing the support info (package-support.json by default) is va
 explains the options for providing support info and what goes into the package.json for
 each case.
 
-`npx suport validate` is run from the directory that contains the package.json for the package.
+`npx support validate` is run from the directory that contains the package.json for the package.
 Depending the how the `support` section in the package.json is configured validate will:
 
 * validate the format of the `support` section in the package.json conforms to the
 documentation in [Integration into package.json](https://github.com/nodejs/package-maintenance/blob/master/docs/PACKAGE-SUPPORT.md#integration-into-packagejson)
-* calculate the file which cotains the support info
+* calculate the file which contains the support info
 * if the file is available locally, use that data unless the `--canonical`
   option was specified.
 * if the file is not available locally or `--canonical` was specified
@@ -195,13 +195,13 @@ documentation in [Integration into package.json](https://github.com/nodejs/packa
   where it can be retrieved.
 
 If both the entry in the package.json and the contents of the file with the package support
-information is validate you'll see the follwowing output:
+information is validate you'll see the following output:
 
 ```shell
 Your support information is valid!
 ```
 
-If the support information is not avialable locally or you have specified
+If the support information is not available locally or you have specified
 `--canonical` without `--fetch` you'll see something like:
 
 ```shell
@@ -210,7 +210,7 @@ support info not resolved: https://github.com/pkgjs/support/blob/master/package-
 
 in this case the file is local to the package, but --canonical was specified. The same
 would be shown if the info in the package.json file pointed to a file a different github 
-respository.
+repository.
 
 You might also see this if the file with the support information is outside of the
 the package itself, but still available locally. This may be the case if you
@@ -221,9 +221,9 @@ are using mono-repo and sharing the support file. An example would be:
 ```
 
 This is the case because, by default, the support tool will not read/display files outside of the
-packge itself in order to avoid potential security issues. In order to allow the tool to validate
+package itself in order to avoid potential security issues. In order to allow the tool to validate
 support info in these cases you can use the `--base-path` option to specify the top
-most root from which packge support files can be read:
+most root from which package support files can be read:
 
 ```shell
 npx @pkgjs/support --base-path=${cwd}/../.. validate

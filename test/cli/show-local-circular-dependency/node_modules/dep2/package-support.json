@@ -6,7 +6,7 @@
         "node": "supported"
       },
       "response": {
-        "type": "best-effort"
+        "type": "time-permitting"
       },
       "backing": {
         "hobby": "https://github.com/pkgjs/support"

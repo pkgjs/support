@@ -1,25 +1,25 @@
 Error in support JSON
 TYPE should be array
 
-> 1 | {"versions":[{"version":"*","target":{"node":"supported"},"response":{"type":"Xbest-effort"},"backing":{"hobby":"https://github.com/pkgjs/support"}}]}
-    |                                                                      ^^^^^^^^^^^^^^^^^^^^^^^ 👈🏽  type should be array
+> 1 | {"versions":[{"version":"*","target":{"node":"supported"},"response":{"type":"Xtime-permitting"},"backing":{"hobby":"https://github.com/pkgjs/support"}}]}
+    |                                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^ 👈🏽  type should be array
 
 ONEOF should match exactly one schema in oneOf
 
-> 1 | {"versions":[{"version":"*","target":{"node":"supported"},"response":{"type":"Xbest-effort"},"backing":{"hobby":"https://github.com/pkgjs/support"}}]}
-    |                                                                      ^^^^^^^^^^^^^^^^^^^^^^^ 👈🏽  oneOf should match exactly one schema in oneOf
+> 1 | {"versions":[{"version":"*","target":{"node":"supported"},"response":{"type":"Xtime-permitting"},"backing":{"hobby":"https://github.com/pkgjs/support"}}]}
+    |                                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^ 👈🏽  oneOf should match exactly one schema in oneOf
 
 ENUM should be equal to one of the allowed values
 
-> 1 | {"versions":[{"version":"*","target":{"node":"supported"},"response":{"type":"Xbest-effort"},"backing":{"hobby":"https://github.com/pkgjs/support"}}]}
-    |                                                                              ^^^^^^^^^^^^^^ 👈🏽  enum should be equal to one of the allowed values
+> 1 | {"versions":[{"version":"*","target":{"node":"supported"},"response":{"type":"Xtime-permitting"},"backing":{"hobby":"https://github.com/pkgjs/support"}}]}
+    |                                                                              ^^^^^^^^^^^^^^^^^^ 👈🏽  enum should be equal to one of the allowed values
 
 PATTERN should match pattern "regular-[1-7]"
 
-> 1 | {"versions":[{"version":"*","target":{"node":"supported"},"response":{"type":"Xbest-effort"},"backing":{"hobby":"https://github.com/pkgjs/support"}}]}
-    |                                                                              ^^^^^^^^^^^^^^ 👈🏽  pattern should match pattern "regular-[1-7]"
+> 1 | {"versions":[{"version":"*","target":{"node":"supported"},"response":{"type":"Xtime-permitting"},"backing":{"hobby":"https://github.com/pkgjs/support"}}]}
+    |                                                                              ^^^^^^^^^^^^^^^^^^ 👈🏽  pattern should match pattern "regular-[1-7]"
 
 ONEOF should match exactly one schema in oneOf
 
-> 1 | {"versions":[{"version":"*","target":{"node":"supported"},"response":{"type":"Xbest-effort"},"backing":{"hobby":"https://github.com/pkgjs/support"}}]}
-    |                                                                              ^^^^^^^^^^^^^^ 👈🏽  oneOf should match exactly one schema in oneOf
+> 1 | {"versions":[{"version":"*","target":{"node":"supported"},"response":{"type":"Xtime-permitting"},"backing":{"hobby":"https://github.com/pkgjs/support"}}]}
+    |                                                                              ^^^^^^^^^^^^^^^^^^ 👈🏽  oneOf should match exactly one schema in oneOf

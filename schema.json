@@ -33,7 +33,15 @@
             "items": { "$ref": "#SupportResponse" }
           }]
         },
-        "backing": { "$ref": "#SupportBacking" }
+        "backing": {
+          "oneOf": [{
+              "$ref": "#SupportBacking"
+            }, {
+            "type": "array",
+            "minItems": 1,
+            "items": { "$ref": "#SupportBacking" }
+          }]
+        }
       },
       "additionalProperties": false
     },

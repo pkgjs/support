@@ -49,7 +49,7 @@ npx @pkgjs/support show
 with a stripped down version of the the output to make it more easily readable being:
 
 ```shell
-  @pkgjs/support(0.0.2) - { "versions": [ { "version": "*", "target": { "node": "supported" }, "response": { "type": "best-effort" }, "backing": { "hobby": "https://github.com/pkgjs/support" } } ] }
+  @pkgjs/support(0.0.2) - { "versions": [ { "version": "*", "target": { "node": "supported" }, "response": { "type": "time-permitting" }, "backing": { "hobby": "https://github.com/pkgjs/support" } } ] }
     @npmcli/arborist(0.0.0) - unknown
       @npmcli/installed-package-contents(1.0.5) - unknown
         npm-bundled(1.1.1) - unknown
@@ -74,7 +74,7 @@ been added to any of the dependent packages yet.
 The support info shown is:
 
 ```shell
-  @pkgjs/support(0.0.2) - { "versions": [ { "version": "*", "target": { "node": "supported" }, "response": { "type": "best-effort" }, "backing": { "hobby": "https://github.com/pkgjs/support" } } ] }
+  @pkgjs/support(0.0.2) - { "versions": [ { "version": "*", "target": { "node": "supported" }, "response": { "type": "time-permitting" }, "backing": { "hobby": "https://github.com/pkgjs/support" } } ] }
 ```
 
 For the rest of the modules it simply shows `unknown` as the packages do not yet provide it.

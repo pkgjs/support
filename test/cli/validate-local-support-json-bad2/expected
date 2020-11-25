@@ -1,5 +1,5 @@
 Error in support JSON
 ADDTIONAL PROPERTY should NOT have additional properties
 
-> 1 | {"versions":[{"version":"*","target":{"node":"supported"},"response":{"type":"best-effort"},"Xbacking":{"hobby":"https://github.com/pkgjs/support"}}]}
-    |                                                                                             ^^^^^^^^^^ 😲  Xbacking is not expected to be here!
+> 1 | {"versions":[{"version":"*","target":{"node":"supported"},"response":{"type":"time-permitting"},"Xbacking":{"hobby":"https://github.com/pkgjs/support"}}]}
+    |                                                                                                 ^^^^^^^^^^ 😲  Xbacking is not expected to be here!

@@ -13,7 +13,7 @@
       "node": ">=8 <10"
     },
     "response": [{
-      "type": "best-effort",
+      "type": "time-permitting",
       "paid": false,
       "contact": {
         "name": "Volunteers",
@@ -36,7 +36,7 @@
       "node": "lts"
     },
     "response": [{
-      "type": "best-effort",
+      "type": "time-permitting",
       "paid": false,
       "contact": {
         "name": "Volunteers",

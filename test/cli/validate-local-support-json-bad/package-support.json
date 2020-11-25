@@ -6,7 +6,7 @@
         "node": "supported"
       },
       "response": {
-        "type": "Xbest-effort"
+        "type": "Xtime-permitting"
       },
       "backing": {
         "hobby": "https://github.com/pkgjs/support"

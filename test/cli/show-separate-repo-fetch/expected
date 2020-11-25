@@ -1,1 +1,1 @@
-  @pkgjs/support-separate-repo(0.0.1) - { "versions": [{ "version": "*", "target": { "node": "lts" }, "response": { "type": "best-effort" }, "backing": { "hobby": "https://github.com/pkgjs/support" } }]}
+  @pkgjs/support-separate-repo(0.0.1) - { "versions": [{ "version": "*", "target": { "node": "lts" }, "response": { "type": "time-permitting" }, "backing": { "hobby": "https://github.com/pkgjs/support" } }]}

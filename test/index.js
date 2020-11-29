@@ -68,7 +68,7 @@ const assert = require('assert')
 
 function safeReadFile (filePath) {
   try {
-    return fs.readFileSync(filePath).toString();
+    return String(fs.readFileSync(filePath));
   } catch (error) {
     if (error.code === 'ENOENT') {
       return '';

@@ -2,6 +2,7 @@
 const { before, suite, test, run } = require('mocha');
 const path = require('path');
 const util = require('util');
+const { Writable } = require('stream');
 const fs = require('fs-extra');
 const Ajv = require('ajv');
 const support = require('..');
@@ -45,18 +46,42 @@ const assert = require('assert')
   const cliTestsDir = path.join(__dirname, 'cli');
   const cliTests = await fs.readdir(cliTestsDir);
   suite('cli tests', async () => {
-    const supportCommand = '../../../bin/support';
-    cliTests.forEach((testDir) => {
+    const supportCommand = path.normalize('../../../bin/support');
+    cliTests.forEach((testDir, i) => {
       test(`cli test: ${testDir}`, () => {
         const cwd = path.join(__dirname, 'cli', testDir);
         const rawCommand = fs.readFileSync(path.join(cwd, 'command')).toString();
         const command = rawCommand.replace(/\$\{cwd\}/g, cwd);
         const expected = fs.readFileSync(path.join(cwd, 'expected')).toString();
-        const result = childProcess.execSync(`${supportCommand} ${command}`, { cwd: cwd }).toString();
+        // const expectedErr = fs.readFileSync(path.join(cwd, 'expected-errors')).toString(); // TODO
+        const expectedErr = 'TODO';
+
+        const stdOut = buildStringWriter({ objectMode: false });
+        const processOpts = {
+          cwd: cwd,
+          stdio: [0, 'pipe', stdOut]
+        };
+        const result = childProcess.execSync(`${supportCommand} ${command}`, processOpts).toString();
         assert.strictEqual(result, expected);
+        assert.strictEqual(stdOut.toString(), expectedErr);
       });
     });
   });
 
   run();
 })();
+
+function buildStringWriter (opts) {
+  const data = [];
+  const stream = new Writable({
+    ...opts,
+    write (chunk, encoding, done) {
+      data.push(chunk.toString());
+      done();
+    }
+  });
+  stream.toString = function () {
+    return data.join('');
+  };
+  return stream;
+}

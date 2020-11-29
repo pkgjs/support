@@ -2,7 +2,6 @@
 const { before, suite, test, run } = require('mocha');
 const path = require('path');
 const util = require('util');
-const { Writable } = require('stream');
 const fs = require('fs-extra');
 const Ajv = require('ajv');
 const support = require('..');
@@ -47,23 +46,19 @@ const assert = require('assert')
   const cliTests = await fs.readdir(cliTestsDir);
   suite('cli tests', async () => {
     const supportCommand = path.normalize('../../../bin/support');
-    cliTests.forEach((testDir, i) => {
-      test(`cli test: ${testDir}`, () => {
+    cliTests.forEach((testDir) => {
+      test(`cli test: ${testDir}`, (done) => {
         const cwd = path.join(__dirname, 'cli', testDir);
         const rawCommand = fs.readFileSync(path.join(cwd, 'command')).toString();
         const command = rawCommand.replace(/\$\{cwd\}/g, cwd);
-        const expected = fs.readFileSync(path.join(cwd, 'expected')).toString();
-        // const expectedErr = fs.readFileSync(path.join(cwd, 'expected-errors')).toString(); // TODO
-        const expectedErr = 'TODO';
+        const expected = safeReadFile(path.join(cwd, 'expected'));
+        const expectedErr = safeReadFile(path.join(cwd, 'expected-errors'));
 
-        const stdOut = buildStringWriter({ objectMode: false });
-        const processOpts = {
-          cwd: cwd,
-          stdio: [0, 'pipe', stdOut]
-        };
-        const result = childProcess.execSync(`${supportCommand} ${command}`, processOpts).toString();
-        assert.strictEqual(result, expected);
-        assert.strictEqual(stdOut.toString(), expectedErr);
+        childProcess.exec(`${supportCommand} ${command}`, { cwd: cwd }, (err, stdout, stderr) => {
+          assert.strictEqual(stdout, expected);
+          assert.strictEqual(stderr, expectedErr);
+          done(err);
+        });
       });
     });
   });
@@ -71,17 +66,13 @@ const assert = require('assert')
   run();
 })();
 
-function buildStringWriter (opts) {
-  const data = [];
-  const stream = new Writable({
-    ...opts,
-    write (chunk, encoding, done) {
-      data.push(chunk.toString());
-      done();
+function safeReadFile (filePath) {
+  try {
+    return fs.readFileSync(filePath).toString();
+  } catch (error) {
+    if (error.code === 'ENOENT') {
+      return '';
     }
-  });
-  stream.toString = function () {
-    return data.join('');
-  };
-  return stream;
+    throw error;
+  }
 }

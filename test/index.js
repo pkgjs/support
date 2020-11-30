@@ -45,18 +45,34 @@ const assert = require('assert')
   const cliTestsDir = path.join(__dirname, 'cli');
   const cliTests = await fs.readdir(cliTestsDir);
   suite('cli tests', async () => {
-    const supportCommand = '../../../bin/support';
+    const supportCommand = path.normalize('../../../bin/support');
     cliTests.forEach((testDir) => {
-      test(`cli test: ${testDir}`, () => {
+      test(`cli test: ${testDir}`, (done) => {
         const cwd = path.join(__dirname, 'cli', testDir);
         const rawCommand = fs.readFileSync(path.join(cwd, 'command')).toString();
         const command = rawCommand.replace(/\$\{cwd\}/g, cwd);
-        const expected = fs.readFileSync(path.join(cwd, 'expected')).toString();
-        const result = childProcess.execSync(`${supportCommand} ${command}`, { cwd: cwd }).toString();
-        assert.strictEqual(result, expected);
+        const expected = safeReadFile(path.join(cwd, 'expected'));
+        const expectedErr = safeReadFile(path.join(cwd, 'expected-errors'));
+
+        childProcess.exec(`${supportCommand} ${command}`, { cwd: cwd }, (err, stdout, stderr) => {
+          assert.strictEqual(stdout, expected);
+          assert.strictEqual(stderr, expectedErr);
+          done(err);
+        });
       });
     });
   });
 
   run();
 })();
+
+function safeReadFile (filePath) {
+  try {
+    return String(fs.readFileSync(filePath));
+  } catch (error) {
+    if (error.code === 'ENOENT') {
+      return '';
+    }
+    throw error;
+  }
+}

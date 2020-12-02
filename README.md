@@ -16,13 +16,6 @@ some tooling around working with the format proposed.
 
 This repository is managed by the [Package Maintenance Working Group](https://github.com/nodejs/package-maintenance), see [Governance](https://github.com/nodejs/package-maintenance/blob/master/Governance.md).
 
-
-## Project Status
-
-The spec proposal is currently being reviewed and is open for feedback.  As we have not
-finalized the documentation, this package is similarly in draft.  Until the spec is
-considered complete I will hold off on publishing `1.0.0`.
-
 ## Command line usage
 
 A command line tool is provided which supports the following commands:

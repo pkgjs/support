@@ -12,7 +12,7 @@ case.
 Once you have node.js installed (version 10.x or later) you can
 run the support command directly using npx or optionally npm install the
 package and add the `bin` directory to your path. In either case
-you can run the support tool using `npx support`.
+you can run the support tool using `npx @pkgjs/support`.
 
 ## Package Consumers
 
@@ -35,7 +35,7 @@ The general flow is:
 
 * install the package to display package support information for
 * cd into the directory which contains the root package
-* execute `npx support show`
+* execute `npx @pkgjs/support show`
 
 For example once node.js and the package support tool are installed to show
 the package support for a module (the support module itself in this example):
@@ -181,7 +181,7 @@ and the file containing the support info (package-support.json by default) is va
 explains the options for providing support info and what goes into the package.json for
 each case.
 
-`npx support validate` is run from the directory that contains the package.json for the package.
+`npx @pkgjs/support validate` is run from the directory that contains the package.json for the package.
 Depending the how the `support` section in the package.json is configured validate will:
 
 * validate the format of the `support` section in the package.json conforms to the

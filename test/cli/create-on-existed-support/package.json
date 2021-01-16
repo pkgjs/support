@@ -1,0 +1,9 @@
+{
+  "name": "@pkgjs/create-on-existed-support",
+  "version": "0.0.1",
+  "support": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pkgjs/support.git"
+  }
+}

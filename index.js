@@ -5,6 +5,7 @@ const normalizeUrl = require('normalize-url');
 const Ajv = require('ajv');
 const got = require('got');
 const betterAjvErrors = require('better-ajv-errors');
+const create = require('./lib/cli/create');
 
 let ajv;
 let compiledSchema;
@@ -15,6 +16,7 @@ const schema = module.exports.schema = require('./schema.json');
 const supportElementSchema = module.exports.schema = require('./support-element-schema.json');
 
 module.exports.defaultPackageSupport = 'package-support.json';
+module.exports.create = create;
 
 function getBetterAjvErrorsOptions (cli) {
   const options = { format: 'js' };
@@ -127,4 +129,18 @@ module.exports.getSupportData = async (pkg, pkgPath, preferCanonical, basePathOv
     }
   }
   return supportInfo;
+};
+
+module.exports.getNodeJsTargetVersionsList = () => {
+  return schema.definitions.SupportTargetNodeVersion.anyOf[0].enum;
+};
+
+module.exports.getSupportResponseTypesList = () => {
+  const schemaOptions = schema.definitions.SupportResponse.properties.type.oneOf[0].enum;
+
+  for (let daysForResponse = 1; daysForResponse <= 7; daysForResponse++) {
+    schemaOptions.push(`regular-${daysForResponse}`);
+  }
+
+  return schemaOptions;
 };

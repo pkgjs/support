@@ -1,0 +1,18 @@
+{
+  "versions": [
+    {
+      "version": "*",
+      "target": {
+        "node": "lts"
+      },
+      "response": {
+        "type": "time-permitting"
+      },
+      "backing": {
+        "donations": [
+          "http://example.com/donateAlso"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "versions": [
+    {
+      "version": "*",
+      "target": {
+        "node": "lts"
+      },
+      "response": {
+        "type": "time-permitting"
+      },
+      "backing": {
+        "donations": [
+          "https://www.patreon.com/test",
+          "https://github.com/test",
+          "https://opencollective.com/qwe",
+          "https://ko-fi.com/qwe",
+          "https://tidelift.com/funding/github/npm/test",
+          "https://funding.communitybridge.org/projects/test",
+          "https://liberapay.com/test",
+          "https://issuehunt.io/r/test",
+          "https://otechie.com/test",
+          "test1",
+          "test2"
+        ]
+      }
+    }
+  ]
+}

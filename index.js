@@ -132,11 +132,26 @@ module.exports.getSupportData = async (pkg, pkgPath, preferCanonical, basePathOv
 };
 
 module.exports.getNodeJsTargetVersionsList = () => {
-  return schema.definitions.SupportTargetNodeVersion.anyOf[0].enum;
+  return [
+    'abandoned',
+    'none',
+    'all',
+    'lts',
+    'active',
+    'lts_active',
+    'lts_latest',
+    'supported',
+    'current'
+  ];
 };
 
 module.exports.getSupportResponseTypesList = () => {
-  const schemaOptions = schema.definitions.SupportResponse.properties.type.oneOf[0].enum;
+  const schemaOptions = [
+    'none',
+    'time-permitting',
+    'best-effort',
+    '24-7'
+  ];
 
   for (let daysForResponse = 1; daysForResponse <= 7; daysForResponse++) {
     schemaOptions.push(`regular-${daysForResponse}`);

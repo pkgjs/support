@@ -1,0 +1,19 @@
+{
+  "name": "@pkgjs/create-command",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pkgjs/support.git"
+  },
+  "funding": [
+    {
+      "type" : "individual",
+      "url" : "http://example.com/donate"
+    },
+    "http://example.com/donateAlso",
+    {
+      "type" : "patreon",
+      "url" : "https://www.patreon.com/my-account"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+patreon: test
+github: [test]
+open_collective: qwe # Replace with a single Open Collective username
+ko_fi: qwe # Replace with a single Ko-fi username
+tidelift: npm/test
+community_bridge: test # Replace with a single Community Bridge project-name e.g., cloud-foundry
+liberapay: test # Replace with a single Liberapay username
+issuehunt: test # Replace with a single IssueHunt username
+otechie: test # Replace with a single Otechie username
+custom: ['test1', 'test2'] # Replace with up to 4 custom sponsorship URLs e.g., ['link1', 'link2']

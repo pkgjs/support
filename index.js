@@ -131,6 +131,9 @@ module.exports.getSupportData = async (pkg, pkgPath, preferCanonical, basePathOv
   return supportInfo;
 };
 
+/**
+ * Returns list of target Node.js versions for package-support.json file
+ */
 module.exports.getNodeJsTargetVersionsList = () => {
   return [
     'abandoned',
@@ -145,6 +148,9 @@ module.exports.getNodeJsTargetVersionsList = () => {
   ];
 };
 
+/**
+ * Returns list of response types for package-support.json file
+ */
 module.exports.getSupportResponseTypesList = () => {
   const schemaOptions = [
     'none',

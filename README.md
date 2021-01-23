@@ -14,7 +14,7 @@ of support they may intend to provide.  The [Node.js Package Maintenance Working
 is working to propose [a spec](https://github.com/nodejs/package-maintenance/blob/HEAD/docs/PACKAGE-SUPPORT.md) to help package authors declare their intended support goals.  This package provides
 some tooling around working with the format proposed.
 
-This repository is managed by the [Package Maintenance Working Group](https://github.com/nodejs/package-maintenance), see [Governance](https://github.com/nodejs/package-maintenance/blob/master/Governance.md).
+This repository is managed by the [Package Maintenance Working Group](https://github.com/nodejs/package-maintenance), see [Governance](https://github.com/nodejs/package-maintenance/blob/main/Governance.md).
 
 ## Command line usage
 

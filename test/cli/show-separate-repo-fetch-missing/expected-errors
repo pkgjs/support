@@ -1,1 +1,1 @@
-  @pkgjs/support-separate-repo(0.0.1) - failed to fetch - https://github.com/pkgjs/support/blob/master/examples/does-not-exist.json
+  @pkgjs/support-separate-repo(0.0.1) - failed to fetch - https://github.com/pkgjs/support/blob/HEAD/examples/does-not-exist.json

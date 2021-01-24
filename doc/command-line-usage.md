@@ -18,7 +18,7 @@ you can run the support tool using `npx @pkgjs/support`.
 
 The support tool helps package consumers review and understand the
 package support information provided by maintainers. See
-[Package-support.md](https://github.com/nodejs/package-maintenance/blob/main/docs/PACKAGE-SUPPORT.md)
+[Package-support.md](https://github.com/nodejs/package-maintenance/blob/HEAD/docs/PACKAGE-SUPPORT.md)
 which documents the suggested best practice and the specific format of the
 package support information.
 
@@ -97,7 +97,7 @@ npx @pkgjs/support show --canonical
 
 
 ```
-@pkgjs/support(0.0.2) - https://github.com/pkgjs/support/blob/main/package-support.json
+@pkgjs/support(0.0.2) - https://github.com/pkgjs/support/blob/HEAD/package-support.json
     @npmcli/arborist(0.0.0) - unknown
       @npmcli/installed-package-contents(1.0.5) - unknown
         npm-bundled(1.1.1) - unknown

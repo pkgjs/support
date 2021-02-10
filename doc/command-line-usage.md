@@ -177,7 +177,7 @@ The `validate` command checks that both the information added to the package.jso
 and the file containing the support info (package-support.json by default) is valid.
 
 
-[Integration into package.json](https://github.com/nodejs/package-maintenance/blob/main/docs/PACKAGE-SUPPORT.md#integration-into-packagejson)
+[Integration into package.json](https://github.com/nodejs/package-maintenance/blob/HEAD/docs/PACKAGE-SUPPORT.md#integration-into-packagejson)
 explains the options for providing support info and what goes into the package.json for
 each case.
 

@@ -97,7 +97,7 @@ npx @pkgjs/support show --canonical
 
 
 ```
-@pkgjs/support(0.0.2) - https://github.com/pkgjs/support/blob/master/package-support.json
+@pkgjs/support(0.0.2) - https://github.com/pkgjs/support/blob/HEAD/package-support.json
     @npmcli/arborist(0.0.0) - unknown
       @npmcli/installed-package-contents(1.0.5) - unknown
         npm-bundled(1.1.1) - unknown
@@ -116,7 +116,7 @@ npx @pkgjs/support show --canonical
 ```
 
 where the support info is listed as 
-`https://github.com/pkgjs/support/blob/master/package-support.json`
+`https://github.com/pkgjs/support/blob/HEAD/package-support.json`
 
 The --canonical option does not automatically pull the remote information so that the
 consumer can choose to find the locations without automatically triggering a number of
@@ -151,7 +151,7 @@ of the package, the tool will simply print the url from which the support inform
 can be obtained versus displaying it. For example:
 
 ```
-@pkgjs/support-show-local-escape-ok(0.0.1) - https://github.com/pkgjs/support/blob/master/my-support-info.json
+@pkgjs/support-show-local-escape-ok(0.0.1) - https://github.com/pkgjs/support/blob/HEAD/my-support-info.json
 ```
 
 where the `support` entry was:
@@ -216,7 +216,7 @@ If the support information is not available locally or you have specified
 `--canonical` without `--fetch` you'll see something like:
 
 ```shell
-support info not resolved: https://github.com/pkgjs/support/blob/master/package-support.json
+support info not resolved: https://github.com/pkgjs/support/blob/HEAD/package-support.json
 ```
 
 in this case the file is local to the package, but --canonical was specified. The same

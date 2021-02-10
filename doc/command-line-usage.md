@@ -185,7 +185,7 @@ each case.
 Depending the how the `support` section in the package.json is configured validate will:
 
 * validate the format of the `support` section in the package.json conforms to the
-documentation in [Integration into package.json](https://github.com/nodejs/package-maintenance/blob/main/docs/PACKAGE-SUPPORT.md#integration-into-packagejson)
+documentation in [Integration into package.json](https://github.com/nodejs/package-maintenance/blob/HEAD/docs/PACKAGE-SUPPORT.md#integration-into-packagejson)
 * calculate the file which contains the support info
 * if the file is available locally, use that data unless the `--canonical`
   option was specified.

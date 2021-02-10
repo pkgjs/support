@@ -1,0 +1,20 @@
+{
+  "versions": [
+    {
+      "version": "*",
+      "target": {
+        "node": "lts"
+      },
+      "response": {
+        "type": "time-permitting"
+      },
+      "backing": {
+        "donations": [
+          "http://example.com/donate",
+          "http://example.com/donateAlso",
+          "https://www.patreon.com/my-account"
+        ]
+      }
+    }
+  ]
+}

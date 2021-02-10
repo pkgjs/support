@@ -1,6 +1,6 @@
 # Using the package support tool from the command line
 
-There are 2 main uses cases for the package support tool
+There are 2 main use cases for the package support tool
 
 * Package Maintainers - document and communicate expectations to consumers
 * Package Consumers - understand more about their key dependencies and where they 
@@ -164,24 +164,35 @@ where the `support` entry was:
 
 Package maintainers want to add and manage the support information for their modules.
 
-Ultimately we'll want commands help generate the support info, but as a first step
-the `validate` command is provided which validates that the info is in the
-right format/locations. 
-
-To add support information a maintainer needs to:
-
-* add information to the package.json which specifies were to find the support info
-* provide a file with the package support info.
-
-The `validate` command checks that both the information added to the package.json
-and the file containing the support info (package-support.json by default) is valid.
-
-
 [Integration into package.json](https://github.com/nodejs/package-maintenance/blob/HEAD/docs/PACKAGE-SUPPORT.md#integration-into-packagejson)
 explains the options for providing support info and what goes into the package.json for
 each case.
 
-`npx @pkgjs/support validate` is run from the directory that contains the package.json for the package.
+In order to add support information a maintainer can use `create` command.
+
+`npx @pkgjs/support create` is run from the directory that contains the `package.json` for the package.
+It will ask few questions (e.g. what Node.js version your package support or how quickly you are able to respond to issues)
+in order to build proper `package-support.json` file.
+This command can also build [`backing`](https://github.com/nodejs/package-maintenance/blob/HEAD/docs/PACKAGE-SUPPORT.md#support-backing) field based on your `.github/FUNDING.yml` file or `"funding"` field from `package.json`.
+
+`create` command will create `package-support.json` file in current working directory for you
+and will update `package.json` in order to set `"support: true"` field.
+
+`create` command has `-y|--yes` flag which does pretty much the same as `npm init -y` but with package support info.
+It will create `package-support.json` file with default commonly-used values.
+This can be used in case you want to get some basic scaffolding and edit file manually.
+
+```shell
+npx @pkgjs/support create -y
+```
+
+In case package support information was added manually - `@pkgjs/support` also provides
+ability to validate this infomation automatically according to official schema.
+
+The `validate` command checks that both the information added to the package.json
+and the file containing the support info (package-support.json by default) is valid.
+
+`npx @pkgjs/support validate` is run from the directory that contains the `package.json` for the package.
 Depending the how the `support` section in the package.json is configured validate will:
 
 * validate the format of the `support` section in the package.json conforms to the

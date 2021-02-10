@@ -23,6 +23,7 @@ A command line tool is provided which supports the following commands:
 * show - show the support info for the package tree.
 * validate - validate support info for a package, to be used by a 
   maintainer before publishing.
+* create - setup a support declaration for a package.
 
 These commands support the following options:
 
@@ -46,4 +47,8 @@ npx @pkgjs/support show
 
 ```
 npx @pkgjs/support validate
+```
+
+```
+npx @pkgjs/support create
 ```

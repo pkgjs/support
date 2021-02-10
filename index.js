@@ -60,7 +60,7 @@ module.exports.validate = (obj, cli = false) => {
 
 // extract the URL for the support info from the pkg info
 module.exports.getRemoteSupportInfoUrl = (repository, supportPath) => {
-  const gitHubInitialPath = '/blob/master/';
+  const gitHubInitialPath = '/blob/HEAD/';
 
   if (repository && (repository.type === 'git')) {
     const directory = repository.directory || '';

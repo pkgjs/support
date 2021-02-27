@@ -106,7 +106,7 @@
         "type": {
           "oneOf": [{
             "type": "string",
-            "enum": [ "none", "time-permitting", "best-effort", "24-7" ]
+            "enum": [ "none", "time-permitting", "24-7" ]
           }, {
             "type": "string",
             "pattern": "regular-[1-7]"

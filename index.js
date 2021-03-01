@@ -155,7 +155,6 @@ module.exports.getSupportResponseTypesList = () => {
   const schemaOptions = [
     'none',
     'time-permitting',
-    'best-effort',
     '24-7'
   ];
 
